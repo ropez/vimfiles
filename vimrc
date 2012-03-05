@@ -56,6 +56,8 @@ if has("autocmd")
     autocmd BufNewFile,BufNew *.rss,*.atom setfiletype xml
 
     autocmd BufWritePost .vimrc source $MYVIMRC
+
+    au FileType javascript setlocal makeprg=gjslint\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
 endif
 
 " Edit or view files in same directory as current file
