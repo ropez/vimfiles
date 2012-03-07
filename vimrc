@@ -21,7 +21,6 @@ set history=1000
 runtime macros/matchit.vim
 
 set wildmenu
-set wildmode=list:longest
 
 set title
 
