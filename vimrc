@@ -55,6 +55,8 @@ if has("autocmd")
 
     autocmd BufNewFile,BufNew *.rss,*.atom setfiletype xml
 
+    autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
+
     autocmd BufWritePost .vimrc source $MYVIMRC
 
     au FileType javascript setlocal makeprg=gjslint\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q

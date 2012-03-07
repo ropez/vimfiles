@@ -10,3 +10,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = https://github.com/vim-scripts/fugitive.vim.git
+[submodule "bundle/wikipedia"]
+	path = bundle/wikipedia
+	url = https://github.com/nkvorn/vim-wikipedia.git
