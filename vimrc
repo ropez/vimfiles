@@ -104,3 +104,8 @@ if filereadable('~/.vimrc.local')
 endif
 
 set guioptions=ac
+
+" Git mappings
+"
+nmap ,gg viwy:Ggrep 0
+vmap ,gg y:Ggrep 0
