@@ -6,6 +6,10 @@ set hidden
 nnoremap ' `
 nnoremap ` '
 
+set showcmd
+set lazyredraw
+set laststatus=2
+
 nmap <C-h> 10h
 nmap <C-j> 10j
 nmap <C-k> 10k
