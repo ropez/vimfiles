@@ -46,6 +46,8 @@ filetype indent on
 set hlsearch
 set incsearch
 
+nmap ,<cr> :nohlsearch<cr>
+
 set expandtab
 set sw=4
 set ts=4 sts=4
