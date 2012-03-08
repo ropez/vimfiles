@@ -52,6 +52,8 @@ set expandtab
 set sw=4
 set ts=4 sts=4
 
+set autowrite
+
 " Automatic settings for different filetypes
 if has("autocmd")
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -64,8 +66,11 @@ if has("autocmd")
 
     autocmd BufWritePost .vimrc source $MYVIMRC
 
-    au FileType javascript setlocal makeprg=gjslint\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
+    au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
 endif
+
+vmap ,gl :!fixjsstylepipe<cr>
+nmap ,gl :.!fixjsstylepipe<cr>
 
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
