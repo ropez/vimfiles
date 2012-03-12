@@ -10,14 +10,6 @@ set showcmd
 set lazyredraw
 set laststatus=2
 
-nmap <C-h> 10h
-nmap <C-j> 10j
-nmap <C-k> 10k
-nmap <C-l> 10l
-
-map <F7> :cprev<cr>
-map <F8> :cnext<cr>
-
 let mapleader = ","
 
 set history=1000
