@@ -46,6 +46,9 @@ set expandtab
 set sw=4
 set ts=4 sts=4
 
+set t_Co=256
+colorscheme desert256
+
 set autowrite
 
 " Automatic settings for different filetypes
