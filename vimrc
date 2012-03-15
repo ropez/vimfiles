@@ -6,6 +6,8 @@ set hidden
 nnoremap ' `
 nnoremap ` '
 
+map ,l :set cursorline!<cr>
+
 set showcmd
 set lazyredraw
 set laststatus=2
