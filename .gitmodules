@@ -25,3 +25,6 @@
 [submodule "bundle/commentary"]
 	path = bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "bundle/rest"]
+	path = bundle/rest
+	url = https://github.com/vim-scripts/rest.vim.git
