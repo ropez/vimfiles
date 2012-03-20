@@ -55,9 +55,9 @@ set autowrite
 if has("autocmd")
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType html,xhtml,php setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType rst setlocal tw=80 formatoptions+=at
+    autocmd FileType rst setlocal tw=80 formatoptions+=t
 
-    autocmd BufNewFile,BufNew *.rss,*.atom setfiletype xml
+    autocmd BufNewFile,BufNew *.rst setfiletype rest
 
     autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
 
