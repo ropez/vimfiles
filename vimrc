@@ -63,11 +63,13 @@ if has("autocmd")
 
     autocmd BufWritePost .vimrc source $MYVIMRC
 
-    au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
-endif
+    au FileType javascript setlocal foldmethod=syntax foldcolumn=3
 
-vmap ,gl :!fixjsstylepipe<cr>
-nmap ,gl :.!fixjsstylepipe<cr>
+    " :make runs the closure linter
+    au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
+    au FileType javascript vmap ,gl :!fixjsstylepipe<cr>
+    au FileType javascript nmap ,gl :.!fixjsstylepipe<cr>
+endif
 
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
