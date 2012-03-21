@@ -100,10 +100,14 @@ map ,e :edit %%
 map ,v :view %%
 
 if 1 " CommandT mappings
+  " Flush cache
+  map ,tf :CommandTFlush<cr>
   " Open files in the current working directory
-  map ,f :CommandTFlush<cr>\|:CommandT<cr>
+  map ,tt :CommandT<cr>
   " Open files in the directory of the current file
-  map ,gf :CommandTFlush<cr>\|:CommandT %%<cr>
+  map ,tg :CommandT %:h<cr>
+  " Switch to buffer
+  map ,tb :CommandTBuffer<cr>
 endif
 
 " Sudo write
