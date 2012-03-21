@@ -1,100 +1,110 @@
 " .vimrc
 
+" Bundles
 call pathogen#infect()
 
-set hidden
-nnoremap ' `
-nnoremap ` '
-
-map ,l :set cursorline!<cr>
-
+" The basics
+set nocompatible
+set backspace=indent,eol,start
+set nobackup
+set history=1000
+set ruler
 set showcmd
 set lazyredraw
 set laststatus=2
-
-let mapleader = ","
-
-set history=1000
-
-runtime macros/matchit.vim
-
+set incsearch
+set title
 set wildmenu
 
-set title
+" Hide, read and save files whenever needed, I don't care
+set hidden
+set autoread
+set autowrite
 
-set scrolloff=3
+" No sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
+" Hide menu and toolbar in gvim
+set guioptions=ac
+
+" Centralized temp files
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set undodir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+" Persistent undo
+set undofile
+
+" Match more stuff
+runtime macros/matchit.vim
+
+" Scrolling
+set scrolloff=3
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-set backspace=indent,eol,start
-
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
-
-set hlsearch
-set incsearch
-
-nmap ,<cr> :nohlsearch<cr>
-
-set expandtab
-set sw=4
-set ts=4 sts=4
-
-set t_Co=256
-colorscheme desert256
-
-set autowrite
-
-" Automatic settings for different filetypes
-if has("autocmd")
-    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    autocmd FileType html,xhtml,php setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType rst setlocal tw=80 formatoptions+=t
-
-    autocmd BufNewFile,BufNew *.rst setfiletype rest
-
-    autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
-
-    autocmd BufWritePost .vimrc source $MYVIMRC
-
-    au FileType javascript setlocal foldmethod=syntax foldcolumn=3
-
-    " :make runs the closure linter
-    au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
-    au FileType javascript vmap ,gl :!fixjsstylepipe<cr>
-    au FileType javascript nmap ,gl :.!fixjsstylepipe<cr>
+" Switch syntax highlighting on, when the terminal has colors
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+  set t_Co=256
+  colorscheme desert256
 endif
 
-" Edit or view files in same directory as current file
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :edit %%
-map <leader>v :view %%
-
-" Map ,c to edit .vimrc
-nmap <leader>c :split $MYVIMRC<cr>
-
-" Open files with <leader>f
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-" Open files, limited to the directory of the current file, with <leader>gf
-" This requires the %% mapping found below.
-map <leader>gf :CommandTFlush<cr>\|:CommandT %%<cr>
-
+" Automagic window resizing
 set winwidth=84
-" We have to have a winheight bigger than we want to set winminheight. But if
-" we set winheight to be huge before winminheight, the winminheight set will
-" fail.
 set winheight=10
 set winminheight=10
 set winheight=999
 
+" Quick toggle mappings
+nmap ,l :set cursorline!<cr>
+nmap ,<cr> :nohlsearch<cr>
+
+" Global default whitespace
+set ts=4 sts=4 sw=4 expandtab
+
+" Automatic settings for different filetypes
+if has("autocmd")
+  filetype plugin indent on
+
+  autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType html,xhtml,php setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+
+  autocmd BufNewFile,BufNew *.rst setfiletype rest
+  autocmd FileType rest setlocal tw=80 formatoptions+=t
+
+  autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
+
+  " Auto source .vimrc
+  autocmd BufWritePost .vimrc source $MYVIMRC
+
+  au FileType javascript setlocal foldmethod=syntax foldcolumn=3
+
+  " :make runs the closure linter
+  au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
+  au FileType javascript vmap ,gl :!fixjsstylepipe<cr>
+  au FileType javascript nmap ,gl :.!fixjsstylepipe<cr>
+endif
+
 " Switch between the last two files
-nnoremap <leader><leader> <c-^>
+nnoremap ,, <c-^>
+
+" Edit or view files in same directory as current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map ,e :edit %%
+map ,v :view %%
+
+if 1 " CommandT mappings
+  " Open files in the current working directory
+  map ,f :CommandTFlush<cr>\|:CommandT<cr>
+  " Open files in the directory of the current file
+  map ,gf :CommandTFlush<cr>\|:CommandT %%<cr>
+endif
 
 " Sudo write
 if executable('sudo') && executable('tee')
@@ -103,13 +113,14 @@ if executable('sudo') && executable('tee')
         \ setlocal nomodified
 endif
 
-if filereadable('~/.vimrc.local')
-    source ~/.vimrc.local
-endif
-
-set guioptions=ac
+" Map ,c to edit .vimrc
+nmap ,c :split $MYVIMRC<cr>
 
 " Git mappings
-"
 nmap ,gg viwy:Ggrep 0
 vmap ,gg y:Ggrep 0
+
+" Extra settings
+if filereadable('~/.vimrc.local')
+  source ~/.vimrc.local
+endif
