@@ -75,7 +75,7 @@ if has("autocmd")
   autocmd FileType html,xhtml,php setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 
-  autocmd BufNewFile,BufNew *.rst setfiletype rest
+  autocmd BufRead,BufNewFile *.rst set filetype=rest
   autocmd FileType rest setlocal tw=80 formatoptions+=t
 
   autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
