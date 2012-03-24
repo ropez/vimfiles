@@ -32,11 +32,13 @@ set guioptions=ac
 
 " Centralized temp files
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set undodir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Persistent undo
-set undofile
+if has("persistent_undo")
+  set undofile
+  set undodir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+endif
 
 " Match more stuff
 runtime macros/matchit.vim
