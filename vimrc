@@ -27,6 +27,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
 " Hide menu and toolbar in gvim
 set guioptions=ac
 
@@ -62,6 +65,7 @@ set winheight=999
 
 " Quick toggle mappings
 nmap ,l :set cursorline!<cr>
+nmap ,n :set list!<cr>
 nmap ,<cr> :nohlsearch<cr>
 
 " Global default whitespace
