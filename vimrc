@@ -95,6 +95,10 @@ if has("autocmd")
   au FileType javascript nmap ,gl :.!fixjsstylepipe<cr>
 endif
 
+" Make paste autoindent
+nmap p p=']
+nmap P P=']
+
 " Switch between the last two files
 nnoremap ,, <c-^>
 
