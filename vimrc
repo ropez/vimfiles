@@ -28,7 +28,8 @@ set t_vb=
 set tm=500
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,trail:·
+"eol:¬
 
 " Hide menu and toolbar in gvim
 set guioptions=ac
