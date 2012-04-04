@@ -31,6 +31,9 @@ set tm=500
 set listchars=tab:▸\ ,trail:·
 "eol:¬
 
+" Show last line
+set display+=lastline
+
 " Hide menu and toolbar in gvim
 set guioptions=ac
 
