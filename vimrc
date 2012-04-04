@@ -36,6 +36,8 @@ set display+=lastline
 
 " Hide menu and toolbar in gvim
 set guioptions=ac
+set guicursor=a:blinkoff0
+set vb t_vb=
 
 " Centralized temp files
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
