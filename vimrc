@@ -151,6 +151,6 @@ nmap ,gg viwy:Ggrep 0
 vmap ,gg y:Ggrep 0
 
 " Extra settings
-if filereadable('~/.vimrc.local')
+if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
