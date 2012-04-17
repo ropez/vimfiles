@@ -39,6 +39,10 @@ set guioptions=ac
 set guicursor=a:blinkoff0
 set vb t_vb=
 
+" Switch 0 and ^
+noremap 0 ^
+noremap ^ 0
+
 " Centralized temp files
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
