@@ -102,6 +102,8 @@ if has("autocmd")
   au FileType javascript setlocal foldmethod=syntax foldcolumn=3
   au FileType gitcommit setlocal foldmethod=manual
 
+  au FileType cmake setlocal commentstring=#\ %s
+
   " :make runs the closure linter
   au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
   au FileType javascript vmap ,gl :!fixjsstylepipe<cr>
