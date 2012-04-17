@@ -115,6 +115,9 @@ nmap P P=']
 " Switch between the last two files
 nnoremap ,, <c-^>
 
+" Quick close
+nmap ,d :bd<cr>
+
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map ,e :edit %%
