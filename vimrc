@@ -66,14 +66,8 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
   set t_Co=256
-  colorscheme desert256
+  colorscheme jellybeans
 endif
-
-" Automagic window resizing
-set winwidth=84
-set winheight=10
-set winminheight=10
-set winheight=999
 
 " Quick toggle mappings
 nmap ,l :set cursorline!<cr>
@@ -105,14 +99,10 @@ if has("autocmd")
   au FileType cmake setlocal commentstring=#\ %s
 
   " :make runs the closure linter
-  au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
+  " au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
   au FileType javascript vmap ,gl :!fixjsstylepipe<cr>
   au FileType javascript nmap ,gl :.!fixjsstylepipe<cr>
 endif
-
-" Make paste autoindent
-nmap p p=']
-nmap P P=']
 
 " Switch between the last two files
 nnoremap ,, <c-^>
