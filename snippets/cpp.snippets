@@ -1,2 +1,26 @@
+snippet guard
+	#ifndef ${1:`toupper(Filename('$1_H', 'UNTITLED_H'))`}
+	#define $1
+
+	${2}
+
+	#endif // $1
+snippet qobject
+	#include <$2>
+	#include <QScopedPointer>
+
+	class $1Private;
+
+	class ${1:name} : public ${2:QObject}
+	{
+		Q_OBJECT
+
+	public:
+		$1(QObject *parent = 0);
+		~$1();
+
+	private:
+		QScopedPointer<$1Private> d;
+	};
 snippet con [connect]
 	connect(${1:sender}, SIGNAL(${2:signal}(${3:args})), ${4:this}, SLOT(${5:slot}(${6:$3})));
