@@ -140,6 +140,9 @@ nmap ,c :split $MYVIMRC<cr>
 nmap ,gg viwy:Ggrep 0
 vmap ,gg y:Ggrep 0
 
+" Map ,/ to grep for last search
+map ,/ :Ggrep '/'
+
 " Extra settings
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
