@@ -34,6 +34,9 @@ set listchars=tab:▸\ ,trail:·
 " Show last line
 set display+=lastline
 
+" Hidden files
+set wildignore+=*.pyc
+
 " Hide menu and toolbar in gvim
 set guioptions=ac
 set guicursor=a:blinkoff0
