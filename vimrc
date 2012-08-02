@@ -142,6 +142,11 @@ nmap ,c :split $MYVIMRC<cr>
 " Git mappings
 nmap ,gg viwy:Ggrep 0
 vmap ,gg y:Ggrep 0
+map ,gc :Gcommit<cr>
+map ,ga :Git add -p<cr>
+map ,gr :Git ra<cr>
+map ,gs :Git show<cr>
+map ,gd :Git diff --cached<cr>
 
 " Map ,/ to grep for last search
 map ,/ :Ggrep '/'
