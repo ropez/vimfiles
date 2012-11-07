@@ -88,7 +88,10 @@ if has("autocmd")
   autocmd FileType html,xhtml,php setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 
+  autocmd BufRead,BufNewFile *.kv set filetype=yaml
   autocmd BufRead,BufNewFile *.rst set filetype=rest
+  autocmd BufRead,BufNewFile *.upstart set filetype=upstart
+  autocmd BufRead,BufNewFile SConstruct set filetype=python
   autocmd FileType rest setlocal tw=80 formatoptions+=t
 
   autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
@@ -142,7 +145,7 @@ nmap ,c :split $MYVIMRC<cr>
 " Git mappings
 nmap ,gg viwy:Ggrep 0
 vmap ,gg y:Ggrep 0
-map ,gc :Gcommit<cr>
+map ,gc :Gcommit<cr>
 map ,ga :Git add -p<cr>
 map ,gr :Git ra<cr>
 map ,gs :Git show<cr>
