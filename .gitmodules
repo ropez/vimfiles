@@ -52,3 +52,6 @@
 [submodule "bundle/django"]
 	path = bundle/django
 	url = https://github.com/vim-scripts/django.vim
+[submodule "bundle/nginx"]
+	path = bundle/nginx
+	url = https://github.com/andersjanmyr/nginx-vim-syntax
