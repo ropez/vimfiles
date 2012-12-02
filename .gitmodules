@@ -55,3 +55,6 @@
 [submodule "bundle/nginx"]
 	path = bundle/nginx
 	url = https://github.com/andersjanmyr/nginx-vim-syntax
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = https://github.com/klen/python-mode
