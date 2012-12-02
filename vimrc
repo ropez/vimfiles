@@ -20,6 +20,7 @@ set wildmenu
 set hidden
 set autoread
 set autowrite
+set autowriteall
 
 " No sound on errors
 set noerrorbells
@@ -87,6 +88,7 @@ if has("autocmd")
   autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html,xhtml,php setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType debcontrol setlocal ts=2 sts=2 sw=2 et
 
   autocmd BufRead,BufNewFile *.kv set filetype=yaml
   autocmd BufRead,BufNewFile *.rst set filetype=rest
@@ -95,6 +97,7 @@ if has("autocmd")
   autocmd FileType rest setlocal tw=80 formatoptions+=t
 
   autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
+  autocmd BufRead,BufNewFile *wiki.*.tmp set filetype=mediawiki
 
   " Auto source .vimrc
   autocmd BufWritePost .vimrc source $MYVIMRC
