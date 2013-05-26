@@ -58,3 +58,12 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = https://github.com/klen/python-mode
+[submodule "bundle/handlebars"]
+	path = bundle/handlebars
+	url = https://github.com/nono/vim-handlebars
+[submodule "bundle/less"]
+	path = bundle/less
+	url = https://github.com/groenewege/vim-less
+[submodule "bundle/coffee-script"]
+	path = bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
