@@ -34,18 +34,12 @@
 [submodule "bundle/jasmine"]
 	path = bundle/jasmine
 	url = https://github.com/claco/jasmine.vim
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = https://github.com/garbas/vim-snipmate
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
 [submodule "bundle/addon-mw-utils"]
 	path = bundle/addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "bundle/snipmate-snippets"]
-	path = bundle/snipmate-snippets
-	url = https://github.com/honza/vim-snippets
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround
@@ -73,3 +67,6 @@
 [submodule "bundle/riv"]
 	path = bundle/riv
 	url = https://github.com/Rykka/riv.vim
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
