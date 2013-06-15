@@ -151,13 +151,18 @@ nmap ,c :split $MYVIMRC<cr>
 nmap ,gg viwy:Ggrep 0
 vmap ,gg y:Ggrep 0
 map ,gc :Gcommit<cr>
+map ,gb :Gblame<cr>
 map ,ga :Git add -p<cr>
 map ,gr :Git ra<cr>
-map ,gs :Git show<cr>
-map ,gd :Git diff --cached<cr>
+map ,gs :Git show -C<cr>
+map ,gd :Git diff --cached -C<cr>
+map ,gl :Git l<cr>
 
 " Map ,/ to grep for last search
 map ,/ :Ggrep '/'
+
+" Python coverage
+map ,pc :Coveragepy report<cr>
 
 " Extra settings
 if filereadable(expand('~/.vimrc.local'))
