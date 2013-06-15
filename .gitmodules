@@ -45,7 +45,7 @@
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "bundle/snipmate-snippets"]
 	path = bundle/snipmate-snippets
-	url = https://github.com/honza/snipmate-snippets.git
+	url = https://github.com/honza/vim-snippets
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround
@@ -54,7 +54,7 @@
 	url = https://github.com/vim-scripts/django.vim
 [submodule "bundle/nginx"]
 	path = bundle/nginx
-	url = https://github.com/andersjanmyr/nginx-vim-syntax
+	url = https://github.com/thiderman/nginx-vim-syntax
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = https://github.com/klen/python-mode
@@ -67,3 +67,6 @@
 [submodule "bundle/coffee-script"]
 	path = bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script
+[submodule "bundle/coveragepy"]
+	path = bundle/coveragepy
+	url = https://github.com/alfredodeza/coveragepy.vim
