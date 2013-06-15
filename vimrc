@@ -164,6 +164,11 @@ map ,/ :Ggrep '/'
 " Python coverage
 map ,pc :Coveragepy report<cr>
 
+" Virtualenv settings
+if filereadable(expand('$VIRTUAL_ENV/.vimrc'))
+  source $VIRTUAL_ENV/.vimrc
+end
+
 " Extra settings
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
