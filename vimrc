@@ -89,6 +89,7 @@ if has("autocmd")
   autocmd FileType html,xhtml,php setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType debcontrol setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType coffee setlocal ts=2 sts=2 sw=2
 
   autocmd BufRead,BufNewFile *.kv set filetype=yaml
   autocmd BufRead,BufNewFile *.rst set filetype=rest
@@ -98,19 +99,20 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
   autocmd BufRead,BufNewFile *wiki.*.tmp set filetype=mediawiki
+  autocmd BufRead,BufNewFile *.html set filetype=htmldjango
 
   " Auto source .vimrc
   autocmd BufWritePost .vimrc source $MYVIMRC
 
   au FileType javascript setlocal foldmethod=syntax foldcolumn=3
-  au FileType gitcommit setlocal foldmethod=manual
+  au FileType gitcommit setlocal foldmethod=manual spell
 
   au FileType cmake setlocal commentstring=#\ %s
 
   " :make runs the closure linter
   " au FileType javascript setlocal makeprg=gjslint\ --custom_jsdoc_tags\ property\ % errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
-  au FileType javascript vmap ,gl :!fixjsstylepipe<cr>
-  au FileType javascript nmap ,gl :.!fixjsstylepipe<cr>
+  " au FileType javascript vmap ,gl :!fixjsstylepipe<cr>
+  " au FileType javascript nmap ,gl :.!fixjsstylepipe<cr>
 endif
 
 " Switch between the last two files

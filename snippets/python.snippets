@@ -7,3 +7,7 @@ snippet setUp
 snippet uni
 	def __unicode__(self):
 		return self.
+snippet fixture
+	@pytest.fixture
+	def ${1:fixture}(${2}):
+		${3:pass}
