@@ -22,6 +22,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
 Bundle 'SirVer/ultisnips'
 Bundle 'klen/python-mode'
+Bundle 'othree/html5.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 " The basics
 set backspace=indent,eol,start
