@@ -1,10 +1,29 @@
 " .vimrc
 
+set nocompatible
+filetype off
+
 " Bundles
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'vim-scripts/Command-T'
+Bundle 'vim-scripts/swap-parameters'
+Bundle 'tpope/vim-capslock'
+Bundle 'tpope/vim-commentary.git'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-repeat.git'
+Bundle 'tpope/vim-sleuth'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired.git'
+Bundle 'SirVer/ultisnips'
+Bundle 'klen/python-mode'
 
 " The basics
-set nocompatible
 set backspace=indent,eol,start
 set nobackup
 set history=1000

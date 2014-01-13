@@ -3,3 +3,5 @@
 /spell/*.spl
 /.netrwhist
 /tags
+/bundle
+-/bundle/vundle
