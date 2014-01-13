@@ -57,7 +57,7 @@ set listchars=tab:▸\ ,trail:·
 set display+=lastline
 
 " Hidden files
-set wildignore+=*.pyc
+set wildignore+=*.pyc,*.egg-info/*
 
 " Hide menu and toolbar in gvim
 set guioptions=ac
@@ -120,7 +120,6 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile wiki.*.txt set filetype=mediawiki
   autocmd BufRead,BufNewFile *wiki.*.tmp set filetype=mediawiki
-  autocmd BufRead,BufNewFile *.html set filetype=htmldjango
 
   " Auto source .vimrc
   autocmd BufWritePost .vimrc source $MYVIMRC
@@ -135,6 +134,8 @@ if has("autocmd")
   " au FileType javascript vmap ,gl :!fixjsstylepipe<cr>
   " au FileType javascript nmap ,gl :.!fixjsstylepipe<cr>
 endif
+
+highlight link htmlLink Title
 
 " Switch between the last two files
 nnoremap ,, <c-^>
@@ -178,6 +179,7 @@ map ,gr :Git ra<cr>
 map ,gs :Git show -C<cr>
 map ,gd :Git diff --cached -C<cr>
 map ,gl :Git l<cr>
+map ,gt :Git st<cr>
 
 " Map ,/ to grep for last search
 map ,/ :Ggrep '/'
@@ -189,6 +191,13 @@ map ,pc :Coveragepy report<cr>
 if filereadable(expand('$VIRTUAL_ENV/.vimrc'))
   source $VIRTUAL_ENV/.vimrc
 end
+
+" Ignore 'line too long'
+let g:pymode_lint_ignore = "E501"
+let g:pymode_rope_guess_project = 0
+
+" It's always bash
+let g:is_bash = 1
 
 " Extra settings
 if filereadable(expand('~/.vimrc.local'))
