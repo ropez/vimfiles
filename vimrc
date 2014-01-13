@@ -36,12 +36,12 @@ set laststatus=2
 set incsearch
 set title
 set wildmenu
+set cursorline
 
 " Hide, read and save files whenever needed, I don't care
 set hidden
 set autoread
 set autowrite
-set autowriteall
 
 " No sound on errors
 set noerrorbells
